@@ -1,0 +1,8 @@
+2021-09-17 22:40:58,120 INFO Initializing SetUp
+2021-09-17 22:40:58,136 INFO Disabling notifications
+2021-09-17 22:41:00,520 INFO navigating control to chrome browser
+2021-09-17 22:41:04,953 DEBUG Navigating to corresponding URL
+2021-09-18 00:25:34,531 INFO Initializing SetUp
+2021-09-18 00:25:34,555 INFO Disabling notifications
+2021-09-18 00:25:40,284 INFO navigating control to chrome browser
+2021-09-18 00:25:43,839 DEBUG Navigating to corresponding URL
