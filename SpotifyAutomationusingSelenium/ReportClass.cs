@@ -1,4 +1,11 @@
-﻿using System;
+﻿
+/*
+ * project = Generating EXtent REports
+ * Author = G Vivek
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 using AventStack.ExtentReports;
@@ -13,17 +20,12 @@ namespace SpotifyAutomationusingSelenium
         public static ExtentReports extent;
         public static ExtentTest test;
 
-        private ReportClass()
-        {
-
-        }
-        
-
         public static ExtentReports report()
         {
             if(extent == null)
             {
-                string reportPath = @"C:\Users\vivek.g\source\repos\SpotifyAutomationusingSelenium\SpotifyAutomationusingSelenium\Reports\Report.html";
+               
+                string reportPath = @"C:\Users\vivek.g\source\repos\SpotifyAutomationusingSelenium\SpotifyAutomationusingSelenium\FireFoxReport\GeckoReport.html";
                 htmlReporter = new ExtentHtmlReporter(reportPath);
                 extent = new ExtentReports();
                 extent.AttachReporter(htmlReporter);
@@ -31,11 +33,11 @@ namespace SpotifyAutomationusingSelenium
                 extent.AddSystemInfo("UserName", "Vivek");
                 extent.AddSystemInfo("ProviderName", "Vivek");
                 extent.AddSystemInfo("Domain", "QA");
+                extent.AddSystemInfo("Browser", "FireFox");
                 extent.AddSystemInfo("ProjectName", "Spotify Automation");
 
                 string conifgPath = @"C:\Users\vivek.g\source\repos\SpotifyAutomationusingSelenium\SpotifyAutomationusingSelenium\report.xml";
                 htmlReporter.LoadConfig(conifgPath);
-
 
             }
             return extent;

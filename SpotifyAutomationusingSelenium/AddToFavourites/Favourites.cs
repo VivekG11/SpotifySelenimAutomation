@@ -1,12 +1,11 @@
-﻿
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace SpotifyAutomationusingSelenium.Login
+namespace SpotifyAutomationusingSelenium.AddToFavourites
 {
-    public class LoginPage
+    public class Favourites
     {
-        public LoginPage(IWebDriver driver)
+        public Favourites(IWebDriver driver)
         {
             PageFactory.InitElements(driver, this);
         }
@@ -27,7 +26,7 @@ namespace SpotifyAutomationusingSelenium.Login
         [CacheLookup]
         public IWebElement webplayer;
 
-        [FindsBy(How = How.XPath, Using = "/html[1]/body[1]/div[4]/div[1]/div[2]/div[1]/header[1]/div[3]/div[1]/div[1]/form[1]/input[1]")]
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"main\"]/div/div[2]/div[1]/header/div[3]/div/div/form/input")]
         [CacheLookup]
         public IWebElement search;
 
@@ -42,6 +41,5 @@ namespace SpotifyAutomationusingSelenium.Login
         [FindsBy(How = How.ClassName, Using = "CY8Z5OJX7wXdnPM1vRVz")]
         [CacheLookup]
         public IWebElement collection;
-
     }
 }
