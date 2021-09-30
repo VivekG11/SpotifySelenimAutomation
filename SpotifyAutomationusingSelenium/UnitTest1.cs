@@ -47,8 +47,8 @@ namespace SpotifyAutomationusingSelenium
             test = reports.CreateTest("Tests");
             test.Log(Status.Info, "Automating Spotify Login PAge");
 
-            Action action = new Action();
-            action.FavouritePlaylist(driver);
+            FavouritesPlaylist playlist = new FavouritesPlaylist();
+            playlist.AddToFavouritePlaylist(driver);
 
             Screenshot();
 
@@ -73,6 +73,7 @@ namespace SpotifyAutomationusingSelenium
     [Parallelizable]
     public class ChromeTesting : CrossBrowsers
     {
+        //it invokes chromeDriver 
         public ChromeTesting():base(Browsers.Chrome)
         {
 
@@ -90,6 +91,7 @@ namespace SpotifyAutomationusingSelenium
     [Parallelizable]
     public class FireFoxTesting : CrossBrowsers
     {
+        //It invokes firefox driver
         public FireFoxTesting() : base(Browsers.Firefox)
         {
 
@@ -107,6 +109,7 @@ namespace SpotifyAutomationusingSelenium
     [Parallelizable]
     public class IETesting : CrossBrowsers
     {
+        //it invokes Internet Explorer
         public IETesting() : base(Browsers.IE)
         {
 

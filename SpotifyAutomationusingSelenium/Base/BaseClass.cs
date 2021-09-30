@@ -26,7 +26,7 @@ namespace SpotifyAutomationusingSelenium.Base
 
             try
             {
-
+                //Logging Process info into file
                 LogInfo.Info("Initializing SetUp");
                 ChromeOptions options = new ChromeOptions();
                 options.AddArgument("--disable-notifications");

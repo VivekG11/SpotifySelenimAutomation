@@ -15,6 +15,8 @@ namespace SpotifyAutomationusingSelenium
     public class CrossBrowsers :Actions.Action
     {
        private Browsers browserType;
+
+      //Creating constructor of class with Browsers as paramter
       public CrossBrowsers(Browsers browser)
         {
             browserType = browser;

@@ -19,54 +19,6 @@ namespace SpotifyAutomationusingSelenium.Actions
             string title = driver.Title;
             Assert.AreEqual(title1, title);
         }
-        public  void FavouritePlaylist(IWebDriver driver)
-        {
-            try
-            {
-                //Creating object for login class
-                Favourites AddtoFav = new Favourites(driver);
-
-
-                AddtoFav.userName.SendKeys("vivekvk2903@gmail.com");
-                Thread.Sleep(2000);
-
-                AddtoFav.pwd.SendKeys("Vivek@1313");
-                Thread.Sleep(1000);
-
-                AddtoFav.loginButton.Click();
-                Thread.Sleep(2000);
-
-                AddtoFav.webplayer.Click();
-                Thread.Sleep(1000);
-
-                Assert.AreEqual("https://www.spotify.com/in-en/account/overview/", driver.Url);
-
-                driver.Navigate().GoToUrl("https://open.spotify.com/search");
-
-                Base.BaseClass.Screenshot();
-                Thread.Sleep(2000);
-
-                AddtoFav.search.SendKeys(Keys.Control + "v");
-                Thread.Sleep(2000);
-
-                AddtoFav.album.SendKeys(Keys.Enter);
-                Thread.Sleep(2000);
-
-                AddtoFav.favourite.Click();
-                Thread.Sleep(2000);
-
-                AddtoFav.collection.Click();
-                Thread.Sleep(2000);
-
-                //Printing Current Window ID
-                String currentWindowHandle = driver.CurrentWindowHandle;
-                Console.WriteLine("CurrentWindow ID is " + currentWindowHandle);
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
 
         public  void LoginToSpotify(IWebDriver driver)
         {
@@ -114,17 +66,30 @@ namespace SpotifyAutomationusingSelenium.Actions
             Thread.Sleep(1000);
 
             playlist.loginButton.Click();
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
 
             playlist.webplayer.Click();
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
 
-            playlist.creatbtn.Click();
-        //}
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine(e.Message);
-        //    }
+            driver.Navigate().GoToUrl("https://open.spotify.com/search");
+            Thread.Sleep(3000);
+
+            playlist.search.SendKeys(Keys.Control + "v");
+            Thread.Sleep(2000);
+
+            playlist.album.SendKeys(Keys.Enter);
+            Thread.Sleep(2000);
+
+            playlist.add.Click();
+            Thread.Sleep(2000);
+
+            playlist.creatbtn.SendKeys(Keys.Enter);
+            Thread.Sleep(2000);
+            //}
+            //    catch (Exception e)
+            //    {
+            //        Console.WriteLine(e.Message);
+            //    }
         }
     }
 }
